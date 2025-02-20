@@ -13,14 +13,18 @@ import { JoiValidationSchema } from './config/joi.validation';
   imports: [
     ConfigModule.forRoot({
       load: [EnvConfigutation],
-      validationSchema: JoiValidationSchema
+      validationSchema: JoiValidationSchema,
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
-    MongooseModule.forRoot(process.env.MONGODB || '', {
-      dbName: "pokemons"
-    }),
+    MongooseModule.forRoot(
+      process.env.MONGODB ||
+        'mongodb://mongo:yshtXplcWmXeKrFVRkQRfBVoUdwXpWyk@gondola.proxy.rlwy.net:55681',
+      {
+        dbName: 'pokemons',
+      },
+    ),
     CommonModule,
     PokemonModule,
     SeedModule,
