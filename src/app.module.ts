@@ -20,7 +20,7 @@ import { JoiValidationSchema } from './config/joi.validation';
     }),
     MongooseModule.forRoot(
       process.env.MONGODB ||
-        'mongodb://mongo:yshtXplcWmXeKrFVRkQRfBVoUdwXpWyk@gondola.proxy.rlwy.net:55681',
+        '',
       {
         dbName: 'pokemons',
       },
